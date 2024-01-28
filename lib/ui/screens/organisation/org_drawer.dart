@@ -3,7 +3,7 @@ import 'package:github_mobile_app/constants/app_dimensions.dart';
 import 'package:github_mobile_app/constants/color_constants.dart';
 import 'package:github_mobile_app/model/org_model.dart';
 import 'package:github_mobile_app/model/profile_model.dart';
-import 'package:github_mobile_app/ui/screens/common/dialog_box.dart';
+import 'package:github_mobile_app/ui/screens/common/authentication_dialog.dart';
 import 'package:github_mobile_app/ui/screens/organisation/logout_tile.dart';
 import 'package:github_mobile_app/ui/screens/organisation/org_tile.dart';
 import 'package:github_mobile_app/view-model/authentication.dart';
@@ -29,13 +29,18 @@ class _OrgDrawerState extends State<OrgDrawer> {
       orgTiles.add(OrgTile(orgDetails: orgDetails[i], index: i));
     }
 
-    orgTiles.add(GestureDetector(
+    orgTiles.add(
+      GestureDetector(
         onTap: () {
-          logoutDialog(context,
-              navigationDelegate: (request) =>
-                  Authentication.handleWebviewNavigation(context, request));
+          logoutDialog(
+            context,
+            navigationDelegate: (request) =>
+                Authentication.handleWebviewNavigation(context, request),
+          );
         },
-        child: const LogoutTile()));
+        child: const LogoutTile(),
+      ),
+    );
 
     return orgTiles;
   }

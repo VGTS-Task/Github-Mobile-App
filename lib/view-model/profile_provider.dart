@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:github_mobile_app/constants/api_base_url.dart';
 import 'package:github_mobile_app/constants/string_constants.dart';
 import 'package:github_mobile_app/model/org_model.dart';
 import 'package:github_mobile_app/model/profile_model.dart';
@@ -37,26 +38,11 @@ class ProfileProvider extends ChangeNotifier {
     }
   }
 
-  // void getRepos(context, String token) async {
-  //   try {
-  //     isLoading = true;
-  //     var temp = await HttpService.getRepos(context, token: token);
-  //     if (temp != null) {
-  //       reposModel = temp;
-  //     }
-  //     isLoading = false;
-  //     notifyListeners();
-  //   } catch (e) {
-  //     isLoading = false;
-  //     notifyListeners();
-  //     print(e.toString());
-  //   }
-  // }
-
   void getOrgs(context, String token) async {
     try {
       isLoading = true;
-      var orgList = await HttpService.getOrgs(context, token: token);
+      var orgList = await HttpService.getGithubResponse(context, APIUrl.orgs,
+          token: token);
       List<OrgDetails> orgDetails = [];
       if (orgList != null) {
         for (var orgInfo in orgList) {

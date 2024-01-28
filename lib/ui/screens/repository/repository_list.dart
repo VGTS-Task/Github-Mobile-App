@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:github_mobile_app/constants/app_dimensions.dart';
 import 'package:github_mobile_app/constants/string_constants.dart';
 import 'package:github_mobile_app/model/repository_model.dart';
@@ -6,11 +7,13 @@ import 'package:github_mobile_app/ui/screens/repository/repository_tile.dart';
 import 'package:github_mobile_app/view-model/login_provider.dart';
 import 'package:github_mobile_app/view-model/profile_provider.dart';
 import 'package:github_mobile_app/view-model/repository_provider.dart';
-import 'package:provider/provider.dart';
 
 class RepositoryList extends StatefulWidget {
-  const RepositoryList(
-      {required this.profileProvider, required this.reposURL, super.key});
+  const RepositoryList({
+    required this.profileProvider,
+    required this.reposURL,
+    super.key,
+  });
 
   final ProfileProvider profileProvider;
   final String reposURL;

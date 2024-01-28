@@ -10,7 +10,8 @@ class RepositoryProvider extends ChangeNotifier {
   void getRepositopries(BuildContext context, String url, String token) async {
     try {
       isLoading = true;
-      var reposList = await HttpService.getRepos(context, url, token: token);
+      var reposList =
+          await HttpService.getGithubResponse(context, url, token: token);
       List<RepositoryModel> reposDetails = [];
       if (reposList != null) {
         for (var resposInfo in reposList) {

@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart' show showCupertinoDialog;
 import 'package:flutter/material.dart';
-import 'package:github_mobile_app/ui/screens/common/webview.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-
-import '../../../constants/api_base_url.dart';
+import 'package:github_mobile_app/constants/api_base_url.dart';
+import 'package:github_mobile_app/ui/screens/common/webview.dart';
 
 Future loginDialog(context,
     {required String clientId, NavigationDelegate? navigationDelegate}) {
@@ -16,7 +15,9 @@ Future loginDialog(context,
       child: Padding(
         padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
         child: CommonWebview(
-            clientId: clientId, navigationDelegate: navigationDelegate),
+          clientId: clientId,
+          navigationDelegate: navigationDelegate,
+        ),
       ),
     ),
   );
@@ -32,10 +33,9 @@ Future logoutDialog(context, {NavigationDelegate? navigationDelegate}) {
       child: Padding(
         padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
         child: WebView(
-          initialUrl: APIUrl.logouta(),
+          initialUrl: APIUrl.logout,
           javascriptMode: JavascriptMode.unrestricted,
           navigationDelegate: navigationDelegate,
-          onPageFinished: (url) {},
         ),
       ),
     ),

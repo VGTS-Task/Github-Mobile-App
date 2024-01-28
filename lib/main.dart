@@ -1,12 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:github_mobile_app/constants/color_constants.dart';
 import 'package:github_mobile_app/firebase_options.dart';
 import 'package:github_mobile_app/ui/screens/login_authentication.dart';
+import 'package:github_mobile_app/view-model/branch_provider.dart';
 import 'package:github_mobile_app/view-model/profile_provider.dart';
 import 'package:github_mobile_app/view-model/login_provider.dart';
 import 'package:github_mobile_app/view-model/repository_provider.dart';
-import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => LoginProvider()),
         ChangeNotifierProvider(create: (_) => ProfileProvider()),
         ChangeNotifierProvider(create: (_) => RepositoryProvider()),
+        ChangeNotifierProvider(create: (_) => BranchProvider())
       ],
       child: MaterialApp(
         title: 'Github Mobile App',

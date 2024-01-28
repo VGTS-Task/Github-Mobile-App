@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 import 'package:github_mobile_app/constants/app_dimensions.dart';
 import 'package:github_mobile_app/constants/color_constants.dart';
 import 'package:github_mobile_app/constants/string_constants.dart';
-import 'package:github_mobile_app/ui/screens/common/dialog_box.dart';
+import 'package:github_mobile_app/ui/screens/common/authentication_dialog.dart';
 import 'package:github_mobile_app/view-model/login_provider.dart';
 import 'package:github_mobile_app/view-model/authentication.dart';
-import 'package:provider/provider.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
