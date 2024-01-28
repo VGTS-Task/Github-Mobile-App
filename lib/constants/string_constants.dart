@@ -7,4 +7,5 @@ class StringConstants {
   static const String gitHub = "Github";
   static const String logout = "Logout";
   static const String projects = "Projects";
+  static const String project = "Project";
 }
