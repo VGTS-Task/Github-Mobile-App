@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:github_mobile_app/constants/app_dimensions.dart';
 import 'package:github_mobile_app/constants/color_constants.dart';
 import 'package:github_mobile_app/constants/string_constants.dart';
-import 'package:github_mobile_app/ui/screens/org_drawer.dart';
+import 'package:github_mobile_app/ui/screens/organisation/org_drawer.dart';
 import 'package:github_mobile_app/view-model/login_provider.dart';
 import 'package:github_mobile_app/view-model/profile_provider.dart';
 import 'package:provider/provider.dart';
@@ -58,8 +58,8 @@ class _DashboardpageState extends State<DashboardPage> {
             ),
             actions: [
               Padding(
-                padding: const EdgeInsets.only(
-                    right: AppDimensions.bellIconPaddingRight),
+                padding:
+                    const EdgeInsets.only(right: AppDimensions.paddingMedium),
                 child: SvgPicture.asset("assets/images/bell_icon.svg"),
               ),
             ],

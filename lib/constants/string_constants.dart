@@ -5,4 +5,5 @@ class StringConstants {
   static const String accessTokenKey = "accessTokenKey";
   static const String profileKey = "profileKey";
   static const String gitHub = "Github";
+  static const String logout = "Logout";
 }

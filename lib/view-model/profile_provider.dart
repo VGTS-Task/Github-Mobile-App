@@ -1,14 +1,13 @@
 import 'dart:convert';
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:github_mobile_app/constants/string_constants.dart';
 import 'package:github_mobile_app/model/profile_model.dart';
+import 'package:github_mobile_app/ui/screens/common/error_dialog.dart';
 import 'package:github_mobile_app/view-model/http_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ProfileProvider extends ChangeNotifier {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
   bool isLoading = false;
   ProfileModel? profileModel;
 
@@ -19,10 +18,10 @@ class ProfileProvider extends ChangeNotifier {
 
   getProfileInfoFromLocal() async {
     SharedPreferences localPreference = await SharedPreferences.getInstance();
-    String? localAccessToken =
+    String? localProfileInfo =
         localPreference.getString(StringConstants.profileKey);
-    if (localAccessToken != null) {
-      profileModel = ProfileModel.fromJson(jsonDecode(localAccessToken));
+    if (localProfileInfo != null) {
+      profileModel = ProfileModel.fromJson(jsonDecode(localProfileInfo));
       notifyListeners();
     }
   }
@@ -51,20 +50,23 @@ class ProfileProvider extends ChangeNotifier {
       if (orgList != null) {
         for (var orgInfo in orgList) {
           orgDetails.add(OrgDetails.fromJson(orgInfo));
+          // Duplicate enteries
+          orgDetails.add(OrgDetails.fromJson(orgInfo));
+          orgDetails.add(OrgDetails.fromJson(orgInfo));
+          orgDetails.add(OrgDetails.fromJson(orgInfo));
         }
       }
 
       profileModel = profileModel?.copyWith(orgDetails: orgDetails);
-
       SharedPreferences localPreference = await SharedPreferences.getInstance();
       localPreference.setString(
-          StringConstants.accessTokenKey, jsonEncode(profileModel!.toJson()));
+          StringConstants.profileKey, jsonEncode(profileModel!.toJson()));
       isLoading = false;
       notifyListeners();
     } catch (e) {
       isLoading = false;
       notifyListeners();
-      print(e.toString());
+      errorDialog(context, e.toString());
     }
   }
 }

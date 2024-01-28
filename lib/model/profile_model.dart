@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class ProfileModel {
   const ProfileModel({
     required this.id,
@@ -18,7 +16,7 @@ class ProfileModel {
   factory ProfileModel.fromJson(Map<String, dynamic> json) {
     List<OrgDetails> orgDetails = [];
     if (json["orgDetails"] != null) {
-      List<Map<String, dynamic>> orgInfoJson = jsonDecode(json["orgDetails"]);
+      List<dynamic> orgInfoJson = json["orgDetails"];
       for (var orgInfo in orgInfoJson) {
         orgDetails.add(OrgDetails.fromJson(orgInfo));
       }

@@ -14,6 +14,6 @@ class APIUrl {
   static const String accessToken = "$oauth/access_token";
 
   static String authorize(clientId) =>
-      "$oauth/authorize?client_id=$clientId&scope=read:org";
+      "$oauth/authorize?client_id=$clientId&scopes:repo:admin:org";
   static String logouta() => logout;
 }
