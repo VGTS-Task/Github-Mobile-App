@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:github_mobile_app/ui/screens/dashboard.dart';
 import 'package:github_mobile_app/ui/screens/login.dart';
 import 'package:github_mobile_app/view-model/login_provider.dart';
-import 'package:provider/provider.dart';
 
 class LoginAuthentication extends StatefulWidget {
   const LoginAuthentication({super.key});

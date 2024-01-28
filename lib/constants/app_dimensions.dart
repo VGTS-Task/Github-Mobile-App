@@ -40,10 +40,8 @@ class AppDimensions {
   static const double fontSize22 = 22;
   static const double fontSize18 = 18;
   static const double fontSize8 = 8;
-
   static const double inputSize = 16;
   static const double inputLabelSize = 14;
-
   static const double bigTextSize = 18;
   static const double textSize = 16;
   static double smallTextSize = 13;

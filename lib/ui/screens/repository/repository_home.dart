@@ -94,8 +94,9 @@ class _RepositoryHomeState extends State<RepositoryHome> {
           Padding(
             padding: const EdgeInsets.only(top: AppDimensions.paddingSmall2),
             child: RepositoryList(
-                profileProvider: widget.profileProvider,
-                reposURL: widget.orgDetails.reposURL),
+              profileProvider: widget.profileProvider,
+              reposURL: widget.orgDetails.reposURL,
+            ),
           ),
         ],
       ),

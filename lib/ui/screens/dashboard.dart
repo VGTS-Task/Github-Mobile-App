@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 import 'package:github_mobile_app/constants/app_dimensions.dart';
 import 'package:github_mobile_app/constants/color_constants.dart';
 import 'package:github_mobile_app/constants/string_constants.dart';
@@ -7,7 +8,6 @@ import 'package:github_mobile_app/ui/screens/organisation/org_drawer.dart';
 import 'package:github_mobile_app/ui/screens/repository/repository_home.dart';
 import 'package:github_mobile_app/view-model/login_provider.dart';
 import 'package:github_mobile_app/view-model/profile_provider.dart';
-import 'package:provider/provider.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});

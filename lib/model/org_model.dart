@@ -12,10 +12,11 @@ class OrgDetails {
 
   factory OrgDetails.fromJson(Map<String, dynamic> json) {
     return OrgDetails(
-        id: json["id"],
-        name: json["login"],
-        orgImgURL: json["avatar_url"],
-        reposURL: json["repos_url"]);
+      id: json["id"],
+      name: json["login"],
+      orgImgURL: json["avatar_url"],
+      reposURL: json["repos_url"],
+    );
   }
 
   Map<String, dynamic> toJson() {

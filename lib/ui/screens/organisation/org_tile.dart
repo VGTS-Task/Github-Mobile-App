@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:github_mobile_app/constants/app_dimensions.dart';
 import 'package:github_mobile_app/constants/color_constants.dart';
 import 'package:github_mobile_app/model/org_model.dart';
 import 'package:github_mobile_app/view-model/profile_provider.dart';
-import 'package:provider/provider.dart';
 
 class OrgTile extends StatefulWidget {
   const OrgTile({

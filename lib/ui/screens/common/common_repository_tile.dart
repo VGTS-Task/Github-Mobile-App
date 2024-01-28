@@ -20,7 +20,9 @@ class CommonReposTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(AppDimensions.paddingSM2),
+      padding: const EdgeInsets.symmetric(
+          horizontal: AppDimensions.paddingSM2,
+          vertical: AppDimensions.paddingMedium),
       child: Row(
         children: [
           ClipRRect(
@@ -51,7 +53,7 @@ class CommonReposTile extends StatelessWidget {
                       repositoryInfo.ownerName,
                       style: TextStyle(
                         fontSize: AppDimensions.overlineSize,
-                        color: ownerNameColor ?? ColorConstants.ownerNameColor,
+                        color: ownerNameColor ?? ColorConstants.secondaryColor,
                       ),
                     ),
                   ),

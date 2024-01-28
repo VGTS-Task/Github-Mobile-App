@@ -2,11 +2,7 @@ class Secret {
   final String clientId, clientSecret;
   String? code;
 
-  Secret({
-    this.clientId = "",
-    this.clientSecret = "",
-    this.code = "",
-  });
+  Secret({this.clientId = "", this.clientSecret = "", this.code = ""});
 
   factory Secret.fromJson(Map<String, dynamic> jsonMap) {
     return Secret(

@@ -16,6 +16,7 @@ class CommonWebview extends StatefulWidget {
 
 class _CommonWebviewState extends State<CommonWebview> {
   int _currentPosition = 1;
+
   @override
   Widget build(BuildContext context) {
     return IndexedStack(

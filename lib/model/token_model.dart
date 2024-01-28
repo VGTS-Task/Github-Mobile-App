@@ -10,9 +10,10 @@ class TokenModel {
 
   factory TokenModel.fromJson(Map<String, dynamic> json) {
     return TokenModel(
-        accessToken: json['access_token'],
-        tokenType: json['token_type'],
-        scope: json['scope']);
+      accessToken: json['access_token'],
+      tokenType: json['token_type'],
+      scope: json['scope'],
+    );
   }
 
   Map<String, dynamic> toJson() {

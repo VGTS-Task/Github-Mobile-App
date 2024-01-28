@@ -8,4 +8,6 @@ class StringConstants {
   static const String logout = "Logout";
   static const String projects = "Projects";
   static const String project = "Project";
+  static const String noBranches = "No Branches";
+  static const String noCommits = "No Commits";
 }
