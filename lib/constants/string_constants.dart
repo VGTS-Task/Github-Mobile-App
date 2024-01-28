@@ -6,4 +6,5 @@ class StringConstants {
   static const String profileKey = "profileKey";
   static const String gitHub = "Github";
   static const String logout = "Logout";
+  static const String projects = "Projects";
 }

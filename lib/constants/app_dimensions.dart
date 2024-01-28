@@ -10,6 +10,7 @@ class AppDimensions {
   static const double paddingSmall = 8;
   static const double paddingSmall2 = 10;
   static const double paddingSM = 12;
+  static const double paddingSM2 = 13;
   static const double paddingMedium = 16;
   static const double paddingML = 20;
   static const double paddingLarge = 24;
