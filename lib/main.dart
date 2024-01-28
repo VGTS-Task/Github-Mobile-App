@@ -5,6 +5,7 @@ import 'package:github_mobile_app/firebase_options.dart';
 import 'package:github_mobile_app/ui/screens/login_authentication.dart';
 import 'package:github_mobile_app/view-model/profile_provider.dart';
 import 'package:github_mobile_app/view-model/login_provider.dart';
+import 'package:github_mobile_app/view-model/repository_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -24,10 +25,13 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => LoginProvider()),
         ChangeNotifierProvider(create: (_) => ProfileProvider()),
+        ChangeNotifierProvider(create: (_) => RepositoryProvider()),
       ],
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Github Mobile App',
         theme: ThemeData(
+            appBarTheme:
+                const AppBarTheme(color: ColorConstants.primary, elevation: 0),
             colorScheme:
                 ColorScheme.fromSeed(seedColor: ColorConstants.primary),
             scaffoldBackgroundColor: Colors.white),

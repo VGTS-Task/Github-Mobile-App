@@ -31,8 +31,8 @@ class _LoginState extends State<Login> {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.only(
-          top: AppDimensions.loginverticalPadding + screenPadding.top,
-          bottom: AppDimensions.loginverticalPadding + screenPadding.bottom,
+          top: AppDimensions.paddingXXLarge + screenPadding.top,
+          bottom: AppDimensions.paddingXXLarge + screenPadding.bottom,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -64,7 +64,8 @@ class _LoginState extends State<Login> {
                     backgroundColor: MaterialStateProperty.all(
                         ColorConstants.signinButtonColor),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(13)))),
+                        borderRadius:
+                            BorderRadius.circular(AppDimensions.radiusSM)))),
                 child: const Text(StringConstants.signin),
               ),
             )

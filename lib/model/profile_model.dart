@@ -1,4 +1,4 @@
-import 'dart:convert';
+import 'package:github_mobile_app/model/org_model.dart';
 
 class ProfileModel {
   const ProfileModel({
@@ -18,7 +18,7 @@ class ProfileModel {
   factory ProfileModel.fromJson(Map<String, dynamic> json) {
     List<OrgDetails> orgDetails = [];
     if (json["orgDetails"] != null) {
-      List<Map<String, dynamic>> orgInfoJson = jsonDecode(json["orgDetails"]);
+      List<dynamic> orgInfoJson = json["orgDetails"];
       for (var orgInfo in orgInfoJson) {
         orgDetails.add(OrgDetails.fromJson(orgInfo));
       }
@@ -64,25 +64,5 @@ class ProfileModel {
       "avatar_url": imgURL,
       "orgDetails": orgInfoJson
     };
-  }
-}
-
-class OrgDetails {
-  const OrgDetails(
-      {required this.id, required this.name, required this.orgImgURL});
-  final int id;
-  final String name;
-  final String orgImgURL;
-
-  factory OrgDetails.fromJson(Map<String, dynamic> json) {
-    return OrgDetails(
-      id: json["id"],
-      name: json["login"],
-      orgImgURL: json["avatar_url"],
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {"id": id, "login": name, "avatar_url": orgImgURL};
   }
 }
